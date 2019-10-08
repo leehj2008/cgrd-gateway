@@ -1,0 +1,44 @@
+<AEXMLMessage xmlns="http://com/ge/med/ehrae/ae">
+	<column name="e:WAIT,0296" value="${applyCode}"/>
+	<column name="e:WAIT,0046" value="${(patientCode=="1")?string('门诊','住院')}"/><!-- 1门诊，2住院 -->
+	<column name="e:WAIT,0016" value="${visitNO}"/>
+	<column name="p:WAIT,0133" value="${cardNO}"/>
+	<column name="p:0010,0010" value="${patientName}"/>
+	<column name="p:0010,0040" value="${sex}"/>
+	<column name="p:0010,0030" value="${brithday}"/>
+	<column name="e:WAIT,0518" value="${authorName}"/>
+	<column name="e:WAIT,0287" value="${authorCode}"/>
+	<column name="e:WAIT,0513" value="${checkMethod}"/>
+	<column name="e:WAIT,0043" value="${applyOffice}"/>
+	<column name="e:WAIT,0297" value="${checkPart}"/>
+	<column name="e:WAIT,0039" value="${disease}"/>
+	<column name="e:WAIT,0092" value="${history}"/>
+	<column name="e:WAIT,0298" value="${note}"/>
+	<column name="e:WAIT,0054" value="${bedNO}"/>
+	<column name="e:WAIT,0103" value="${charge}"/>
+	<column name="p:0010,2154" value="${phone}"/>
+	<column name="p:0010,1040" value="${address}"/>
+	<column name="e:WAIT,0332" value=""/>
+	<column name="p:WAIT,0116" value="${identityNO}"/>
+	<column name="p:0010,2108" value="${organization}"/>
+	<column name="e:WAIT,0512" value="${verifierTime}"/>
+	<column name="e:WAIT,0096" value="${authorTime}"/>
+	<column name="e:WAIT,0510" value="${executeOfficeCode}"/>
+	<column name="e:WAIT,0579" value="${executeOffice}"/>
+	<column name="p:WAIT,0118" value="${yiBao}"/>
+	<column name="e:WAIT,0511" value="${checkMethodCode}"/>
+	<column name="p:WAIT,0119" value="普通"/>
+	
+	
+	<column name="p:WAIT,0351" value="${patientId}"/>
+	<column name="e:WAIT,0352" value="${orderCode}"/>
+	<column name="e:WAIT,0267" value="${orderCode}"/>
+	<column name="o:WAIT,0266" value="${applyCode}"/>
+	<column name="e:WAIT,0018" value="${ModalityID}"/>
+	<column name="e:WAIT,0072" value="${ProcedureStepID}"/>
+	<column name="e:0040,0003" value="${SCHEDULED_DATE_START?datetime?string("HH:mm")}--${SCHEDULED_DATE_END?datetime?string("HH:mm")}"/>
+	<column name="e:0040,0002" value="${SCHEDULED_DATE_START?datetime?string("yyyy-MM-dd")}"/>
+	
+</AEXMLMessage>
+
+
