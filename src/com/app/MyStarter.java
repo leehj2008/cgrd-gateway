@@ -8,12 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.app.dao.Task;
 import com.app.dao.TaskDao;
-import com.ge.med.ServException;
-import com.ge.med.catcorb.privilege.UserInfoOB;
-import com.ge.med.catcorb.privilege.user.UserMgmtOperations;
-import com.ge.med.dragon.rispacs.service.CXFClientProvider;
-import com.ge.med.dragon.rispacs.service.ServiceFactory;
-import com.ge.med.dragon.rispacs.service.ServiceNameConstants;
 
 @Component
 public class MyStarter implements CommandLineRunner{

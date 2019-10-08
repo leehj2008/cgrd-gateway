@@ -21,7 +21,6 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.service.RISOrderService;
 import com.app.task.Task;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JavaType;
@@ -35,9 +34,6 @@ public class MainController {
 	
 	//@Value("${spring.resources.static-locations}")
 	String staticlocations;
-	
-	@Autowired
-	RISOrderService risOrderService;
 	
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public String index() {
@@ -60,24 +56,21 @@ public class MainController {
 	@RequestMapping(value="/createNewOrder",method = RequestMethod.POST)
 	public ResultObj createNewOrder(HttpServletRequest request,String orderData) {
 		log.info("received new order:[{}]",orderData);
-		ResultObj result = risOrderService.createNewOrder(orderData);
-		return result;
+		return null;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/schedule",method = RequestMethod.POST)
 	public ResultObj schedule(HttpServletRequest request,String orderData) {
 		log.info("received new order:[{}]",orderData);
-		ResultObj result = risOrderService.scheduleOrder(orderData);
-		return result;
+		return null;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/arrive",method = RequestMethod.POST)
 	public ResultObj arrive(HttpServletRequest request,String orderData) {
 		log.info("received new order:[{}]",orderData);
-		ResultObj result = risOrderService.arriveOrder(orderData);
-		return result;
+		return null;
 	}
 	
 	
