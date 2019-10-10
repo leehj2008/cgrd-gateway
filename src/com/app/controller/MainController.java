@@ -46,10 +46,10 @@ public class MainController {
 		log.info("index mapping 'index'");
 		return "index";
 	}
-	@RequestMapping(value="/test")
+	@RequestMapping(value="/home.do")
 	public String test(HttpServletRequest request,Model model) {
-		log.info("index mapping 'test'");
-		return "hello";
+		log.info("index mapping 'home.do'");
+		return "home";
 	}
 	
 	@ResponseBody

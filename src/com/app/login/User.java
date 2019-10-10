@@ -5,38 +5,10 @@ public class User {
 	private int userid;
 	private String username;
 	private String passwd;
-	private String winuser;
-	private String winpass;
-	private String appuser;
-	private String apppass;
 	private String expire_date;
 	private String status;
 	
 	
-	public String getWinuser() {
-		return winuser;
-	}
-	public void setWinuser(String winuser) {
-		this.winuser = winuser;
-	}
-	public String getWinpass() {
-		return winpass;
-	}
-	public void setWinpass(String winpass) {
-		this.winpass = winpass;
-	}
-	public String getAppuser() {
-		return appuser;
-	}
-	public void setAppuser(String appuser) {
-		this.appuser = appuser;
-	}
-	public String getApppass() {
-		return apppass;
-	}
-	public void setApppass(String apppass) {
-		this.apppass = apppass;
-	}
 	public String getExpire_date() {
 		return expire_date;
 	}
