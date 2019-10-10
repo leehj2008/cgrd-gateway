@@ -1,723 +1,346 @@
-2019-07-25 20:49:48 - Starting MainApp on PC-workstation with PID 6276 (H:\workspace\RISOrderAdaptor\bin started by lihaijiang in H:\workspace\RISOrderAdaptor)
-2019-07-25 20:49:48 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2019-07-25 20:49:48 - No active profile set, falling back to default profiles: default
-2019-07-25 20:49:49 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4743bf3d: startup date [Thu Jul 25 20:49:49 CST 2019]; root of context hierarchy
-2019-07-25 20:49:52 - HV000001: Hibernate Validator 5.2.5.Final
-2019-07-25 20:49:56 - Loading XML bean definitions from class path resource [beans.xml]
-2019-07-25 20:50:04 - Tomcat initialized with port(s): 80 (http)
-2019-07-25 20:50:04 - Starting service Tomcat
-2019-07-25 20:50:04 - Starting Servlet Engine: Apache Tomcat/7.0.59
-2019-07-25 20:50:04 - Initializing Spring embedded WebApplicationContext
-2019-07-25 20:50:04 - Root WebApplicationContext: initialization completed in 15908 ms
-2019-07-25 20:50:05 - Mapping servlet: 'dispatcherServlet' to [/]
-2019-07-25 20:50:05 - Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-07-25 20:50:05 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-07-25 20:50:05 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2019-07-25 20:50:05 - Mapping filter: 'requestContextFilter' to: [/*]
-2019-07-25 20:50:13 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4743bf3d: startup date [Thu Jul 25 20:49:49 CST 2019]; root of context hierarchy
-2019-07-25 20:50:13 - Mapped "{[/testPost],methods=[POST]}" onto public java.lang.String com.app.controller.HTTPTestController.testPost(javax.servlet.http.HttpServletRequest,java.util.Map)
-2019-07-25 20:50:13 - Mapped "{[/testGet]}" onto public java.lang.String com.app.controller.HTTPTestController.testGet(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:50:13 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.app.controller.MainController.index()
-2019-07-25 20:50:13 - Mapped "{[/index]}" onto public java.lang.String com.app.controller.MainController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:50:13 - Mapped "{[/test]}" onto public java.lang.String com.app.controller.MainController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:50:13 - Mapped "{[/createNewOrder],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.createNewOrder(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:50:13 - Mapped "{[/schedule],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.schedule(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:50:13 - Mapped "{[/arrive],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.arrive(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:50:13 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:50:13 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-07-25 20:50:14 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:50:14 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:50:14 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:50:14 - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4743bf3d: startup date [Thu Jul 25 20:49:49 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
-2019-07-25 20:50:14 - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2019-07-25 20:50:14 - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2019-07-25 20:50:15 - LiveReload server is running on port 35729
-2019-07-25 20:50:15 - Registering beans for JMX exposure on startup
-2019-07-25 20:50:15 - Initializing ProtocolHandler ["http-nio-80"]
-2019-07-25 20:50:15 - Starting ProtocolHandler ["http-nio-80"]
-2019-07-25 20:50:16 - Using a shared selector for servlet write/read
-2019-07-25 20:50:16 - Tomcat started on port(s): 80 (http)
-2019-07-25 20:50:25 - Creating Service {http://med.ge.com/rispacs/}UserMgmtOperationsService from class com.ge.med.catcorb.privilege.user.UserMgmtOperations
-2019-07-25 20:50:27 - Outbound Message
----------------------------
-ID: 1
-Address: http://192.168.1.25:9000/services/UserMgmtService
-Encoding: UTF-8
-Content-Type: application/soap+xml; action="http://med.ge.com/rispacs/UserMgmtService/GetUserInfoByUserLoginName"
-Headers: {Accept=[*/*], Accept-Encoding=[gzip;q=1.0, identity; q=0.5, *;q=0]}
-Payload: <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:UserLoginName xmlns:ns2="http://med.ge.com/rispacs/">itpschina</ns2:UserLoginName></soap:Body></soap:Envelope>
---------------------------------------
-2019-07-25 20:50:48 - Interceptor for {http://med.ge.com/rispacs/}UserMgmtOperationsService#{http://med.ge.com/rispacs/}getUserInfoByUserLoginName has thrown exception, unwinding now
-org.apache.cxf.interceptor.Fault: Could not send Message.
-	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:64)
-	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:262)
-	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:531)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:464)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:367)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:320)
-	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:89)
-	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:134)
-	at $Proxy107.getUserInfoByUserLoginName(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at com.ge.med.dragon.rispacs.service.CXFServiceProxy.invoke(CXFServiceProxy.java:56)
-	at $Proxy108.getUserInfoByUserLoginName(Unknown Source)
-	at com.app.MyBean.initRISAPI(MyBean.java:42)
-	at com.app.MyStarter.run(MyStarter.java:30)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:801)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:785)
-	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:772)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1187)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1176)
-	at com.app.MainApp.startServer(MainApp.java:41)
-	at com.app.MainApp.main(MainApp.java:36)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.net.ConnectException: ConnectException invoking http://192.168.1.25:9000/services/UserMgmtService: Connection timed out: connect
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1467)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1452)
-	at org.apache.cxf.io.AbstractWrappedOutputStream.close(AbstractWrappedOutputStream.java:77)
-	at org.apache.cxf.io.AbstractThresholdOutputStream.close(AbstractThresholdOutputStream.java:102)
-	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:50)
-	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:187)
-	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
-	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:660)
-	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
-	... 29 common frames omitted
-Caused by: java.net.ConnectException: Connection timed out: connect
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
-	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
-	at java.net.Socket.connect(Socket.java:519)
-	at sun.net.NetworkClient.doConnect(NetworkClient.java:158)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:394)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:529)
-	at sun.net.www.http.HttpClient.<init>(HttpClient.java:233)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:306)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:323)
-	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:852)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:793)
-	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:718)
-	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:896)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1410)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1351)
-	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
-	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1424)
-	... 36 common frames omitted
-2019-07-25 20:50:48 - 
-
-Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
-2019-07-25 20:50:48 - Application startup failed
-java.lang.IllegalStateException: Failed to execute CommandLineRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:804)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:785)
-	at org.springframework.boot.SpringApplication.afterRefresh(SpringApplication.java:772)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1187)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1176)
-	at com.app.MainApp.startServer(MainApp.java:41)
-	at com.app.MainApp.main(MainApp.java:36)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: javax.xml.ws.WebServiceException: Could not send Message.
-	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:145)
-	at $Proxy107.getUserInfoByUserLoginName(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at com.ge.med.dragon.rispacs.service.CXFServiceProxy.invoke(CXFServiceProxy.java:56)
-	at $Proxy108.getUserInfoByUserLoginName(Unknown Source)
-	at com.app.MyBean.initRISAPI(MyBean.java:42)
-	at com.app.MyStarter.run(MyStarter.java:30)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:801)
-	... 12 common frames omitted
-Caused by: java.net.ConnectException: ConnectException invoking http://192.168.1.25:9000/services/UserMgmtService: Connection timed out: connect
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.mapException(HTTPConduit.java:1467)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1452)
-	at org.apache.cxf.io.AbstractWrappedOutputStream.close(AbstractWrappedOutputStream.java:77)
-	at org.apache.cxf.io.AbstractThresholdOutputStream.close(AbstractThresholdOutputStream.java:102)
-	at org.apache.cxf.io.CacheAndWriteOutputStream.postClose(CacheAndWriteOutputStream.java:50)
-	at org.apache.cxf.io.CachedOutputStream.close(CachedOutputStream.java:187)
-	at org.apache.cxf.transport.AbstractConduit.close(AbstractConduit.java:56)
-	at org.apache.cxf.transport.http.HTTPConduit.close(HTTPConduit.java:660)
-	at org.apache.cxf.interceptor.MessageSenderInterceptor$MessageSenderEndingInterceptor.handleMessage(MessageSenderInterceptor.java:62)
-	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:262)
-	at org.apache.cxf.endpoint.ClientImpl.doInvoke(ClientImpl.java:531)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:464)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:367)
-	at org.apache.cxf.endpoint.ClientImpl.invoke(ClientImpl.java:320)
-	at org.apache.cxf.frontend.ClientProxy.invokeSync(ClientProxy.java:89)
-	at org.apache.cxf.jaxws.JaxWsClientProxy.invoke(JaxWsClientProxy.java:134)
-	... 22 common frames omitted
-Caused by: java.net.ConnectException: Connection timed out: connect
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:333)
-	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:195)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:182)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
-	at java.net.Socket.connect(Socket.java:519)
-	at sun.net.NetworkClient.doConnect(NetworkClient.java:158)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:394)
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:529)
-	at sun.net.www.http.HttpClient.<init>(HttpClient.java:233)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:306)
-	at sun.net.www.http.HttpClient.New(HttpClient.java:323)
-	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:852)
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:793)
-	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:718)
-	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:896)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.handleHeadersTrustCaching(HTTPConduit.java:1410)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.onFirstWrite(HTTPConduit.java:1351)
-	at org.apache.cxf.io.AbstractWrappedOutputStream.write(AbstractWrappedOutputStream.java:47)
-	at org.apache.cxf.io.AbstractThresholdOutputStream.write(AbstractThresholdOutputStream.java:69)
-	at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream.close(HTTPConduit.java:1424)
-	... 36 common frames omitted
-2019-07-25 20:50:48 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4743bf3d: startup date [Thu Jul 25 20:49:49 CST 2019]; root of context hierarchy
-2019-07-25 20:50:48 - Unregistering JMX-exposed beans on shutdown
-2019-07-25 20:54:29 - Starting MainApp on PC-workstation with PID 6572 (H:\workspace\RISOrderAdaptor\bin started by lihaijiang in H:\workspace\RISOrderAdaptor)
-2019-07-25 20:54:29 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2019-07-25 20:54:29 - No active profile set, falling back to default profiles: default
-2019-07-25 20:54:29 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@319da967: startup date [Thu Jul 25 20:54:29 CST 2019]; root of context hierarchy
-2019-07-25 20:54:29 - HV000001: Hibernate Validator 5.2.5.Final
-2019-07-25 20:54:30 - Loading XML bean definitions from class path resource [beans.xml]
-2019-07-25 20:54:31 - Tomcat initialized with port(s): 80 (http)
-2019-07-25 20:54:31 - Starting service Tomcat
-2019-07-25 20:54:31 - Starting Servlet Engine: Apache Tomcat/7.0.59
-2019-07-25 20:54:32 - Initializing Spring embedded WebApplicationContext
-2019-07-25 20:54:32 - Root WebApplicationContext: initialization completed in 2999 ms
-2019-07-25 20:54:32 - Mapping servlet: 'dispatcherServlet' to [/]
-2019-07-25 20:54:32 - Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-07-25 20:54:32 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-07-25 20:54:32 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2019-07-25 20:54:32 - Mapping filter: 'requestContextFilter' to: [/*]
-2019-07-25 20:54:33 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@319da967: startup date [Thu Jul 25 20:54:29 CST 2019]; root of context hierarchy
-2019-07-25 20:54:34 - Mapped "{[/testPost],methods=[POST]}" onto public java.lang.String com.app.controller.HTTPTestController.testPost(javax.servlet.http.HttpServletRequest,java.util.Map)
-2019-07-25 20:54:34 - Mapped "{[/testGet]}" onto public java.lang.String com.app.controller.HTTPTestController.testGet(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:54:34 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.app.controller.MainController.index()
-2019-07-25 20:54:34 - Mapped "{[/index]}" onto public java.lang.String com.app.controller.MainController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:54:34 - Mapped "{[/test]}" onto public java.lang.String com.app.controller.MainController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:54:34 - Mapped "{[/createNewOrder],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.createNewOrder(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:54:34 - Mapped "{[/schedule],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.schedule(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:54:34 - Mapped "{[/arrive],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.arrive(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:54:34 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:54:34 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-07-25 20:54:34 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:54:34 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:54:34 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:54:34 - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@319da967: startup date [Thu Jul 25 20:54:29 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
-2019-07-25 20:54:34 - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2019-07-25 20:54:34 - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2019-07-25 20:54:34 - LiveReload server is running on port 35729
-2019-07-25 20:54:34 - Registering beans for JMX exposure on startup
-2019-07-25 20:54:34 - Initializing ProtocolHandler ["http-nio-80"]
-2019-07-25 20:54:34 - Starting ProtocolHandler ["http-nio-80"]
-2019-07-25 20:54:34 - Using a shared selector for servlet write/read
-2019-07-25 20:54:34 - Tomcat started on port(s): 80 (http)
-2019-07-25 20:54:35 - Creating Service {http://med.ge.com/rispacs/}UserMgmtOperationsService from class com.ge.med.catcorb.privilege.user.UserMgmtOperations
-2019-07-25 20:54:35 - Outbound Message
----------------------------
-ID: 1
-Address: http://192.168.1.25:9000/services/UserMgmtService
-Encoding: UTF-8
-Content-Type: application/soap+xml; action="http://med.ge.com/rispacs/UserMgmtService/GetUserInfoByUserLoginName"
-Headers: {Accept=[*/*], Accept-Encoding=[gzip;q=1.0, identity; q=0.5, *;q=0]}
-Payload: <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:UserLoginName xmlns:ns2="http://med.ge.com/rispacs/">itpschina</ns2:UserLoginName></soap:Body></soap:Envelope>
---------------------------------------
-2019-07-25 20:54:38 - Inbound Message
-----------------------------
-ID: 1
-Response-Code: 200
-Encoding: UTF-8
-Content-Type: application/soap+xml; charset=UTF-8
-Headers: {Content-Length=[439], content-type=[application/soap+xml; charset=UTF-8], Server=[Jetty(7.5.4.v20111024)]}
-Payload: <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:GetUserInfoByUserLoginNameResponse xmlns:ns2="http://med.ge.com/rispacs/"><userID>1617</userID><userName>Service帐号</userName><userPasswd></userPasswd><userLogName>itpschina</userLogName><status>active</status><latestLogonDate>2019-07-11 10:22:33.0</latestLogonDate><pyAbbr></pyAbbr></ns2:GetUserInfoByUserLoginNameResponse></soap:Body></soap:Envelope>
---------------------------------------
-2019-07-25 20:54:38 - RIS API Test Result:Service帐号
-2019-07-25 20:54:38 - RISAPI Test Result: Service帐号
-2019-07-25 20:54:39 - Initializing Spring FrameworkServlet 'dispatcherServlet'
-2019-07-25 20:54:39 - FrameworkServlet 'dispatcherServlet': initialization started
-2019-07-25 20:54:39 - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
-2019-07-25 20:54:39 - index mapping null
-2019-07-25 20:54:39 - ==>  Preparing: select current_date 
-2019-07-25 20:54:39 - ==> Parameters: 
-2019-07-25 20:54:39 - <==      Total: 1
-2019-07-25 20:54:39 - DB Test Result: 2019-07-11
-2019-07-25 20:54:39 - Started MainApp in 10.817 seconds (JVM running for 11.585)
-2019-07-25 20:56:43 - received new order:[null]
-2019-07-25 20:56:43 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:871)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2726)
-	at com.app.service.RISOrderService.createNewOrder(RISOrderService.java:42)
-	at com.app.controller.MainController.createNewOrder(MainController.java:63)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-2019-07-25 20:57:35 - Starting MainApp on PC-workstation with PID 7016 (H:\workspace\RISOrderAdaptor\bin started by lihaijiang in H:\workspace\RISOrderAdaptor)
-2019-07-25 20:57:35 - Running with Spring Boot v1.4.7.RELEASE, Spring v4.3.9.RELEASE
-2019-07-25 20:57:35 - No active profile set, falling back to default profiles: default
-2019-07-25 20:57:35 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fd4340c: startup date [Thu Jul 25 20:57:35 CST 2019]; root of context hierarchy
-2019-07-25 20:57:35 - HV000001: Hibernate Validator 5.2.5.Final
-2019-07-25 20:57:37 - Loading XML bean definitions from class path resource [beans.xml]
-2019-07-25 20:57:38 - Tomcat initialized with port(s): 80 (http)
-2019-07-25 20:57:38 - Starting service Tomcat
-2019-07-25 20:57:38 - Starting Servlet Engine: Apache Tomcat/7.0.59
-2019-07-25 20:57:38 - Initializing Spring embedded WebApplicationContext
-2019-07-25 20:57:38 - Root WebApplicationContext: initialization completed in 3502 ms
-2019-07-25 20:57:38 - Mapping servlet: 'dispatcherServlet' to [/]
-2019-07-25 20:57:38 - Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-07-25 20:57:38 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-07-25 20:57:38 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2019-07-25 20:57:38 - Mapping filter: 'requestContextFilter' to: [/*]
-2019-07-25 20:57:40 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fd4340c: startup date [Thu Jul 25 20:57:35 CST 2019]; root of context hierarchy
-2019-07-25 20:57:41 - Mapped "{[/testPost],methods=[POST]}" onto public java.lang.String com.app.controller.HTTPTestController.testPost(javax.servlet.http.HttpServletRequest,java.util.Map)
-2019-07-25 20:57:41 - Mapped "{[/testGet]}" onto public java.lang.String com.app.controller.HTTPTestController.testGet(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:57:41 - Mapped "{[/],methods=[GET]}" onto public java.lang.String com.app.controller.MainController.index()
-2019-07-25 20:57:41 - Mapped "{[/index]}" onto public java.lang.String com.app.controller.MainController.index(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:57:41 - Mapped "{[/test]}" onto public java.lang.String com.app.controller.MainController.test(javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
-2019-07-25 20:57:41 - Mapped "{[/createNewOrder],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.createNewOrder(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:57:41 - Mapped "{[/schedule],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.schedule(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:57:41 - Mapped "{[/arrive],methods=[POST]}" onto public com.app.controller.ResultObj com.app.controller.MainController.arrive(javax.servlet.http.HttpServletRequest,java.lang.String)
-2019-07-25 20:57:41 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-07-25 20:57:41 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-07-25 20:57:41 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:57:41 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:57:41 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-07-25 20:57:41 - SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fd4340c: startup date [Thu Jul 25 20:57:35 CST 2019]; root of context hierarchy] and template loader path [classpath:/templates/]
-2019-07-25 20:57:41 - ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2019-07-25 20:57:41 - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-2019-07-25 20:57:41 - LiveReload server is running on port 35729
-2019-07-25 20:57:41 - Registering beans for JMX exposure on startup
-2019-07-25 20:57:41 - Initializing ProtocolHandler ["http-nio-80"]
-2019-07-25 20:57:41 - Starting ProtocolHandler ["http-nio-80"]
-2019-07-25 20:57:41 - Using a shared selector for servlet write/read
-2019-07-25 20:57:41 - Tomcat started on port(s): 80 (http)
-2019-07-25 20:57:42 - Creating Service {http://med.ge.com/rispacs/}UserMgmtOperationsService from class com.ge.med.catcorb.privilege.user.UserMgmtOperations
-2019-07-25 20:57:43 - Outbound Message
----------------------------
-ID: 1
-Address: http://192.168.1.25:9000/services/UserMgmtService
-Encoding: UTF-8
-Content-Type: application/soap+xml; action="http://med.ge.com/rispacs/UserMgmtService/GetUserInfoByUserLoginName"
-Headers: {Accept=[*/*], Accept-Encoding=[gzip;q=1.0, identity; q=0.5, *;q=0]}
-Payload: <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:UserLoginName xmlns:ns2="http://med.ge.com/rispacs/">itpschina</ns2:UserLoginName></soap:Body></soap:Envelope>
---------------------------------------
-2019-07-25 20:57:43 - Inbound Message
-----------------------------
-ID: 1
-Response-Code: 200
-Encoding: UTF-8
-Content-Type: application/soap+xml; charset=UTF-8
-Headers: {Content-Length=[439], content-type=[application/soap+xml; charset=UTF-8], Server=[Jetty(7.5.4.v20111024)]}
-Payload: <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:GetUserInfoByUserLoginNameResponse xmlns:ns2="http://med.ge.com/rispacs/"><userID>1617</userID><userName>Service帐号</userName><userPasswd></userPasswd><userLogName>itpschina</userLogName><status>active</status><latestLogonDate>2019-07-11 10:22:33.0</latestLogonDate><pyAbbr></pyAbbr></ns2:GetUserInfoByUserLoginNameResponse></soap:Body></soap:Envelope>
---------------------------------------
-2019-07-25 20:57:43 - RIS API Test Result:Service帐号
-2019-07-25 20:57:43 - RISAPI Test Result: Service帐号
-2019-07-25 20:57:43 - ==>  Preparing: select current_date 
-2019-07-25 20:57:43 - ==> Parameters: 
-2019-07-25 20:57:43 - <==      Total: 1
-2019-07-25 20:57:43 - DB Test Result: 2019-07-11
-2019-07-25 20:57:43 - Started MainApp in 8.904 seconds (JVM running for 9.833)
-2019-07-25 20:57:54 - Initializing Spring FrameworkServlet 'dispatcherServlet'
-2019-07-25 20:57:54 - FrameworkServlet 'dispatcherServlet': initialization started
-2019-07-25 20:57:54 - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
-2019-07-25 20:57:54 - received new order:[null]
-2019-07-25 20:58:29 - received new order:[null]
-2019-07-25 21:01:37 - received new order:[{"HISEXAMNO":"HISEXAM003","PATIENTTYPE":"1","VISITTIMES":"2","DIAGNOSEID":"DIAGID001","HISID":"HISID001","NAME":"测试患者","BIRTHDATE":"1980-01-01","SEX":"女","LODGEDOCTOR":"李医生","LODGEDOCTORCODE":"","CHECKITEM":"胸部正侧位","LODGESECTION":"外科一","CHECKPART":"","CLINICALDIAGNOSIS":"外伤","CLINICALSIGN":"","CHECKAIM":"输助诊断","BEDNO":"","MONEY":"209.01","TELEPHONE":"11911912000","ADDRESS":"北京市","CHARGEMARK":"已收费","IDENTITYCARD":"110101198001012430","WORKUNIT":"AA","PAYMONEYDATE":"2019:01:01","APPLYTIME":"20190101120010","EXECUTESECTIONNO":"放射科","EXECUTESECTION":"放射科","HEALTHTYPE":"自费","CHECKSERIALNUM":"100888101281","CHECKITEMID":"HISDX001","FLAG":"NW"}]
-2019-07-25 21:01:42 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:871)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2726)
-	at com.app.service.RISOrderService.createNewOrder(RISOrderService.java:42)
-	at com.app.controller.MainController.createNewOrder(MainController.java:63)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-2019-07-25 21:01:51 - convert to Map:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:01:51 - ==>  Preparing: select * from hisorder.his_order where applyCode=? and validFlag=0 
-2019-07-25 21:01:51 - ==> Parameters: HISEXAM003(String)
-2019-07-25 21:01:51 - <==      Total: 1
-2019-07-25 21:01:51 - search Exist orders:1
-2019-07-25 21:01:51 - updating orders:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:01:51 - ==>  Preparing: update hisorder.his_order set applyCode=?,patientCode=?,visitNO=?,patientId=?,cardNO=?, patientName=?,brithday=?,sex=?,phone=?,address=?, authorName=?,authorCode=?,checkMethod=?,checkMethodCode=?, applyOffice=?,checkPart=?,disease=?,history=?, note=?,bedNO=?,charge=?, identityNO=?,organization=?,verifierTime=?,authorTime=?, executeOfficeCode=?, executeOffice=?, yibao=?,orderCode=? where applyCode=? and validFlag=0 
-2019-07-25 21:01:51 - ==> Parameters: HISEXAM003(String), 1(String), 2(String), DIAGID001(String), HISID001(String), 测试患者(String), 1980-01-01(String), 女(String), 11911912000(String), 北京市(String), 李医生(String), (String), 胸部正侧位(String), HISDX001(String), 外科一(String), (String), 外伤(String), (String), 输助诊断(String), (String), 209.01(String), 110101198001012430(String), AA(String), 2019:01:01(String), 20190101120010(String), 放射科(String), 放射科(String), 自费(String), 100888101281(String), HISEXAM003(String)
-2019-07-25 21:01:51 - <==    Updates: 1
-2019-07-25 21:01:51 - updated
-2019-07-25 21:02:12 - received new order:[null]
-2019-07-25 21:02:21 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:871)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2726)
-	at com.app.service.RISOrderService.createNewOrder(RISOrderService.java:42)
-	at com.app.controller.MainController.createNewOrder(MainController.java:63)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-2019-07-25 21:02:54 - received new order:[null]
-2019-07-25 21:03:01 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:871)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2726)
-	at com.app.service.RISOrderService.createNewOrder(RISOrderService.java:42)
-	at com.app.controller.MainController.createNewOrder(MainController.java:63)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-2019-07-25 21:03:18 - received new order:[{"HISEXAMNO":"HISEXAM003","PATIENTTYPE":"1","VISITTIMES":"2","DIAGNOSEID":"DIAGID001","HISID":"HISID001","NAME":"测试患者","BIRTHDATE":"1980-01-01","SEX":"女","LODGEDOCTOR":"李医生","LODGEDOCTORCODE":"","CHECKITEM":"胸部正侧位","LODGESECTION":"外科一","CHECKPART":"","CLINICALDIAGNOSIS":"外伤","CLINICALSIGN":"","CHECKAIM":"输助诊断","BEDNO":"","MONEY":"209.01","TELEPHONE":"11911912000","ADDRESS":"北京市","CHARGEMARK":"已收费","IDENTITYCARD":"110101198001012430","WORKUNIT":"AA","PAYMONEYDATE":"2019:01:01","APPLYTIME":"20190101120010","EXECUTESECTIONNO":"放射科","EXECUTESECTION":"放射科","HEALTHTYPE":"自费","CHECKSERIALNUM":"100888101281","CHECKITEMID":"HISDX001","FLAG":"NW"}]
-2019-07-25 21:03:18 - convert to Map:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:03:18 - ==>  Preparing: select * from hisorder.his_order where applyCode=? and validFlag=0 
-2019-07-25 21:03:18 - ==> Parameters: HISEXAM003(String)
-2019-07-25 21:03:18 - <==      Total: 1
-2019-07-25 21:03:18 - search Exist orders:1
-2019-07-25 21:03:18 - updating orders:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:03:18 - ==>  Preparing: update hisorder.his_order set applyCode=?,patientCode=?,visitNO=?,patientId=?,cardNO=?, patientName=?,brithday=?,sex=?,phone=?,address=?, authorName=?,authorCode=?,checkMethod=?,checkMethodCode=?, applyOffice=?,checkPart=?,disease=?,history=?, note=?,bedNO=?,charge=?, identityNO=?,organization=?,verifierTime=?,authorTime=?, executeOfficeCode=?, executeOffice=?, yibao=?,orderCode=? where applyCode=? and validFlag=0 
-2019-07-25 21:03:18 - ==> Parameters: HISEXAM003(String), 1(String), 2(String), DIAGID001(String), HISID001(String), 测试患者(String), 1980-01-01(String), 女(String), 11911912000(String), 北京市(String), 李医生(String), (String), 胸部正侧位(String), HISDX001(String), 外科一(String), (String), 外伤(String), (String), 输助诊断(String), (String), 209.01(String), 110101198001012430(String), AA(String), 2019:01:01(String), 20190101120010(String), 放射科(String), 放射科(String), 自费(String), 100888101281(String), HISEXAM003(String)
-2019-07-25 21:03:18 - <==    Updates: 1
-2019-07-25 21:03:18 - updated
-2019-07-25 21:03:39 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:871)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2726)
-	at com.app.service.RISOrderService.createNewOrder(RISOrderService.java:42)
-	at com.app.controller.MainController.createNewOrder(MainController.java:63)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-2019-07-25 21:03:39 - Exception Processing ErrorPage[errorCode=0, location=/error]
-org.apache.catalina.connector.ClientAbortException: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
-	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:367)
-	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:331)
-	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:101)
-	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1022)
-	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:891)
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:292)
-	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:106)
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:231)
-	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:203)
-	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:81)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:113)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:488)
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
-	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:476)
-	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:345)
-	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:437)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:208)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1074)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1739)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1698)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:619)
-Caused by: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
-	at sun.nio.ch.SocketDispatcher.write0(Native Method)
-	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:33)
-	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:104)
-	at sun.nio.ch.IOUtil.write(IOUtil.java:75)
-	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:334)
-	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:128)
-	at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
-	at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:174)
-	at org.apache.coyote.http11.InternalNioOutputBuffer.writeToSocket(InternalNioOutputBuffer.java:163)
-	at org.apache.coyote.http11.InternalNioOutputBuffer.flushBuffer(InternalNioOutputBuffer.java:242)
-	at org.apache.coyote.http11.InternalNioOutputBuffer.flush(InternalNioOutputBuffer.java:94)
-	at org.apache.coyote.http11.AbstractHttp11Processor.action(AbstractHttp11Processor.java:800)
-	at org.apache.coyote.Response.action(Response.java:172)
-	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:363)
-	... 41 common frames omitted
-2019-07-25 21:03:48 - received new order:[{"HISEXAMNO":"HISEXAM003","PATIENTTYPE":"1","VISITTIMES":"2","DIAGNOSEID":"DIAGID001","HISID":"HISID001","NAME":"测试患者","BIRTHDATE":"1980-01-01","SEX":"女","LODGEDOCTOR":"李医生","LODGEDOCTORCODE":"","CHECKITEM":"胸部正侧位","LODGESECTION":"外科一","CHECKPART":"","CLINICALDIAGNOSIS":"外伤","CLINICALSIGN":"","CHECKAIM":"输助诊断","BEDNO":"","MONEY":"209.01","TELEPHONE":"11911912000","ADDRESS":"北京市","CHARGEMARK":"已收费","IDENTITYCARD":"110101198001012430","WORKUNIT":"AA","PAYMONEYDATE":"2019:01:01","APPLYTIME":"20190101120010","EXECUTESECTIONNO":"放射科","EXECUTESECTION":"放射科","HEALTHTYPE":"自费","CHECKSERIALNUM":"100888101281","CHECKITEMID":"HISDX001","FLAG":"NW"}]
-2019-07-25 21:03:48 - convert to Map:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:03:48 - ==>  Preparing: select * from hisorder.his_order where applyCode=? and validFlag=0 
-2019-07-25 21:03:48 - ==> Parameters: HISEXAM003(String)
-2019-07-25 21:03:48 - <==      Total: 1
-2019-07-25 21:03:48 - search Exist orders:1
-2019-07-25 21:03:48 - updating orders:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:03:48 - ==>  Preparing: update hisorder.his_order set applyCode=?,patientCode=?,visitNO=?,patientId=?,cardNO=?, patientName=?,brithday=?,sex=?,phone=?,address=?, authorName=?,authorCode=?,checkMethod=?,checkMethodCode=?, applyOffice=?,checkPart=?,disease=?,history=?, note=?,bedNO=?,charge=?, identityNO=?,organization=?,verifierTime=?,authorTime=?, executeOfficeCode=?, executeOffice=?, yibao=?,orderCode=? where applyCode=? and validFlag=0 
-2019-07-25 21:03:48 - ==> Parameters: HISEXAM003(String), 1(String), 2(String), DIAGID001(String), HISID001(String), 测试患者(String), 1980-01-01(String), 女(String), 11911912000(String), 北京市(String), 李医生(String), (String), 胸部正侧位(String), HISDX001(String), 外科一(String), (String), 外伤(String), (String), 输助诊断(String), (String), 209.01(String), 110101198001012430(String), AA(String), 2019:01:01(String), 20190101120010(String), 放射科(String), 放射科(String), 自费(String), 100888101281(String), HISEXAM003(String)
-2019-07-25 21:03:48 - <==    Updates: 1
-2019-07-25 21:03:48 - updated
-2019-07-25 21:04:04 - received new order:[{"HISEXAMNO":"HISEXAM003","PATIENTTYPE":"1","VISITTIMES":"2","DIAGNOSEID":"DIAGID001","HISID":"HISID001","NAME":"测试患者","BIRTHDATE":"1980-01-01","SEX":"女","LODGEDOCTOR":"李医生","LODGEDOCTORCODE":"","CHECKITEM":"胸部正侧位","LODGESECTION":"外科一","CHECKPART":"","CLINICALDIAGNOSIS":"外伤","CLINICALSIGN":"","CHECKAIM":"输助诊断","BEDNO":"","MONEY":"209.01","TELEPHONE":"11911912000","ADDRESS":"北京市","CHARGEMARK":"已收费","IDENTITYCARD":"110101198001012430","WORKUNIT":"AA","PAYMONEYDATE":"2019:01:01","APPLYTIME":"20190101120010","EXECUTESECTIONNO":"放射科","EXECUTESECTION":"放射科","HEALTHTYPE":"自费","CHECKSERIALNUM":"100888101281","CHECKITEMID":"HISDX001","FLAG":"NW"}]
-2019-07-25 21:04:04 - convert to Map:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:04:04 - ==>  Preparing: select * from hisorder.his_order where applyCode=? and validFlag=0 
-2019-07-25 21:04:04 - ==> Parameters: HISEXAM003(String)
-2019-07-25 21:04:04 - <==      Total: 1
-2019-07-25 21:04:04 - search Exist orders:1
-2019-07-25 21:04:04 - updating orders:{HISEXAMNO=HISEXAM003, PATIENTTYPE=1, VISITTIMES=2, DIAGNOSEID=DIAGID001, HISID=HISID001, NAME=测试患者, BIRTHDATE=1980-01-01, SEX=女, LODGEDOCTOR=李医生, LODGEDOCTORCODE=, CHECKITEM=胸部正侧位, LODGESECTION=外科一, CHECKPART=, CLINICALDIAGNOSIS=外伤, CLINICALSIGN=, CHECKAIM=输助诊断, BEDNO=, MONEY=209.01, TELEPHONE=11911912000, ADDRESS=北京市, CHARGEMARK=已收费, IDENTITYCARD=110101198001012430, WORKUNIT=AA, PAYMONEYDATE=2019:01:01, APPLYTIME=20190101120010, EXECUTESECTIONNO=放射科, EXECUTESECTION=放射科, HEALTHTYPE=自费, CHECKSERIALNUM=100888101281, CHECKITEMID=HISDX001, FLAG=NW}
-2019-07-25 21:04:04 - ==>  Preparing: update hisorder.his_order set applyCode=?,patientCode=?,visitNO=?,patientId=?,cardNO=?, patientName=?,brithday=?,sex=?,phone=?,address=?, authorName=?,authorCode=?,checkMethod=?,checkMethodCode=?, applyOffice=?,checkPart=?,disease=?,history=?, note=?,bedNO=?,charge=?, identityNO=?,organization=?,verifierTime=?,authorTime=?, executeOfficeCode=?, executeOffice=?, yibao=?,orderCode=? where applyCode=? and validFlag=0 
-2019-07-25 21:04:04 - ==> Parameters: HISEXAM003(String), 1(String), 2(String), DIAGID001(String), HISID001(String), 测试患者(String), 1980-01-01(String), 女(String), 11911912000(String), 北京市(String), 李医生(String), (String), 胸部正侧位(String), HISDX001(String), 外科一(String), (String), 外伤(String), (String), 输助诊断(String), (String), 209.01(String), 110101198001012430(String), AA(String), 2019:01:01(String), 20190101120010(String), 放射科(String), 放射科(String), 自费(String), 100888101281(String), HISEXAM003(String)
-2019-07-25 21:04:04 - <==    Updates: 1
-2019-07-25 21:04:04 - updated
+2019-10-10 11:08:31 - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [152] milliseconds.
+2019-10-10 11:08:32 - uri=/
+2019-10-10 11:08:32 - index mapping null
+2019-10-10 11:08:32 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:08:32 - uri=//static/demo.css
+2019-10-10 11:08:32 - uri=//static/jquery.min.js
+2019-10-10 11:08:32 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:08:32 - uri=//static/themes/icon.css
+2019-10-10 11:08:33 - uri=//login
+2019-10-10 11:08:33 - ==>  Preparing: select * from users where username=? 
+2019-10-10 11:08:33 - ==> Parameters: admin(String)
+2019-10-10 11:08:33 - <==      Total: 1
+2019-10-10 11:08:33 - uri=//home.do
+2019-10-10 11:08:33 - index mapping 'home.do'
+2019-10-10 11:08:34 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:08:34 - uri=//static/css/public.css
+2019-10-10 11:08:34 - uri=//static/themes/icon.css
+2019-10-10 11:08:34 - uri=//static/jquery.min.js
+2019-10-10 11:08:34 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:08:34 - uri=//home.js
+2019-10-10 11:08:35 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:08:35 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:08:35 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:08:35 - uri=/
+2019-10-10 11:08:35 - Request method 'POST' not supported
+2019-10-10 11:08:35 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:09:24 - uri=//home.do
+2019-10-10 11:09:24 - index mapping 'home.do'
+2019-10-10 11:09:24 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:09:24 - uri=//static/themes/icon.css
+2019-10-10 11:09:24 - uri=//static/jquery.min.js
+2019-10-10 11:09:24 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:09:24 - uri=//home.js
+2019-10-10 11:09:24 - uri=//static/css/public.css
+2019-10-10 11:09:24 - uri=/favicon.ico
+2019-10-10 11:09:28 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:09:28 - uri=//static/themes/icon.css
+2019-10-10 11:09:28 - uri=//static/demo.css
+2019-10-10 11:09:29 - uri=//login
+2019-10-10 11:09:29 - ==>  Preparing: select * from users where username=? 
+2019-10-10 11:09:29 - ==> Parameters: admin(String)
+2019-10-10 11:09:29 - <==      Total: 1
+2019-10-10 11:09:29 - uri=//home.do
+2019-10-10 11:09:29 - index mapping 'home.do'
+2019-10-10 11:09:29 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:09:29 - uri=//static/themes/icon.css
+2019-10-10 11:09:29 - uri=//home.js
+2019-10-10 11:09:29 - uri=//static/css/public.css
+2019-10-10 11:09:29 - uri=//static/jquery.min.js
+2019-10-10 11:09:29 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:21:01 - uri=//home.do
+2019-10-10 11:21:01 - index mapping 'home.do'
+2019-10-10 11:21:01 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:21:01 - uri=//static/themes/icon.css
+2019-10-10 11:21:01 - uri=//static/jquery.min.js
+2019-10-10 11:21:01 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:21:01 - uri=//static/css/public.css
+2019-10-10 11:21:01 - uri=//home.js
+2019-10-10 11:21:02 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:21:02 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:21:02 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:21:02 - uri=/
+2019-10-10 11:21:02 - Request method 'POST' not supported
+2019-10-10 11:21:02 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:21:02 - uri=/favicon.ico
+2019-10-10 11:21:53 - uri=//home.do
+2019-10-10 11:21:53 - index mapping 'home.do'
+2019-10-10 11:21:53 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:21:53 - uri=//static/themes/icon.css
+2019-10-10 11:21:53 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:21:53 - uri=//static/jquery.min.js
+2019-10-10 11:21:53 - uri=//static/css/public.css
+2019-10-10 11:21:53 - uri=//home.js
+2019-10-10 11:21:54 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:21:54 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:21:54 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:21:54 - uri=/
+2019-10-10 11:21:54 - Request method 'POST' not supported
+2019-10-10 11:21:54 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:21:54 - uri=/favicon.ico
+2019-10-10 11:22:21 - uri=//home.do
+2019-10-10 11:22:21 - index mapping 'home.do'
+2019-10-10 11:22:21 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:22:21 - uri=//static/themes/icon.css
+2019-10-10 11:22:21 - uri=//static/jquery.min.js
+2019-10-10 11:22:21 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:22:21 - uri=//home.js
+2019-10-10 11:22:21 - uri=//static/css/public.css
+2019-10-10 11:22:23 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:22:23 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:22:23 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:22:23 - uri=/
+2019-10-10 11:22:23 - Request method 'POST' not supported
+2019-10-10 11:22:23 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:22:23 - uri=/favicon.ico
+2019-10-10 11:22:39 - uri=//home.do
+2019-10-10 11:22:39 - index mapping 'home.do'
+2019-10-10 11:22:39 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:22:39 - uri=//static/css/public.css
+2019-10-10 11:22:39 - uri=//static/jquery.min.js
+2019-10-10 11:22:39 - uri=//static/themes/icon.css
+2019-10-10 11:22:39 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:22:39 - uri=//home.js
+2019-10-10 11:22:41 - uri=/favicon.ico
+2019-10-10 11:22:56 - uri=//home.do
+2019-10-10 11:22:56 - index mapping 'home.do'
+2019-10-10 11:22:56 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:22:56 - uri=//static/jquery.min.js
+2019-10-10 11:22:56 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:22:56 - uri=//static/themes/icon.css
+2019-10-10 11:22:56 - uri=//home.js
+2019-10-10 11:22:56 - uri=//static/css/public.css
+2019-10-10 11:22:58 - uri=/favicon.ico
+2019-10-10 11:23:16 - uri=//home.do
+2019-10-10 11:23:16 - index mapping 'home.do'
+2019-10-10 11:23:16 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:23:16 - uri=//static/themes/icon.css
+2019-10-10 11:23:16 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:23:16 - uri=//home.js
+2019-10-10 11:23:16 - uri=//static/css/public.css
+2019-10-10 11:23:16 - uri=//static/jquery.min.js
+2019-10-10 11:23:18 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:23:18 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:23:18 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:23:18 - uri=/
+2019-10-10 11:23:18 - Request method 'POST' not supported
+2019-10-10 11:23:18 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:23:18 - uri=/favicon.ico
+2019-10-10 11:23:28 - uri=//home.do
+2019-10-10 11:23:28 - index mapping 'home.do'
+2019-10-10 11:23:28 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:23:28 - uri=//static/themes/icon.css
+2019-10-10 11:23:28 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:23:28 - uri=//static/jquery.min.js
+2019-10-10 11:23:28 - uri=//home.js
+2019-10-10 11:23:28 - uri=//static/css/public.css
+2019-10-10 11:23:30 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:23:30 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:23:30 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:23:30 - uri=/
+2019-10-10 11:23:30 - Request method 'POST' not supported
+2019-10-10 11:23:30 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:23:30 - uri=/favicon.ico
+2019-10-10 11:24:54 - uri=//home.do
+2019-10-10 11:24:54 - index mapping 'home.do'
+2019-10-10 11:24:54 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:24:54 - uri=//static/jquery.min.js
+2019-10-10 11:24:54 - uri=//static/themes/icon.css
+2019-10-10 11:24:54 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:24:54 - uri=//home.js
+2019-10-10 11:24:54 - uri=//static/css/public.css
+2019-10-10 11:24:54 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:24:54 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:24:54 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:24:54 - uri=/
+2019-10-10 11:24:54 - Request method 'POST' not supported
+2019-10-10 11:24:54 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:24:54 - uri=/favicon.ico
+2019-10-10 11:25:14 - uri=//home.do
+2019-10-10 11:25:14 - index mapping 'home.do'
+2019-10-10 11:25:14 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:25:14 - uri=//static/themes/icon.css
+2019-10-10 11:25:14 - uri=//static/css/public.css
+2019-10-10 11:25:14 - uri=//static/jquery.min.js
+2019-10-10 11:25:14 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:25:14 - uri=//home.js
+2019-10-10 11:25:14 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:25:14 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:25:14 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:25:14 - uri=/
+2019-10-10 11:25:14 - Request method 'POST' not supported
+2019-10-10 11:25:14 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:25:14 - uri=/favicon.ico
+2019-10-10 11:28:24 - uri=//home.do
+2019-10-10 11:28:24 - index mapping 'home.do'
+2019-10-10 11:28:24 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:28:24 - uri=//static/themes/icon.css
+2019-10-10 11:28:24 - uri=//static/css/public.css
+2019-10-10 11:28:24 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:28:24 - uri=//static/jquery.min.js
+2019-10-10 11:28:24 - uri=//home.js
+2019-10-10 11:28:24 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:28:24 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:28:24 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:28:24 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:28:24 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:28:24 - uri=/
+2019-10-10 11:28:24 - Request method 'POST' not supported
+2019-10-10 11:28:24 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:28:24 - uri=/favicon.ico
+2019-10-10 11:28:57 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:29:49 - uri=//home.do
+2019-10-10 11:29:49 - index mapping 'home.do'
+2019-10-10 11:29:49 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:29:49 - uri=//static/themes/icon.css
+2019-10-10 11:29:49 - uri=//static/jquery.min.js
+2019-10-10 11:29:49 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:29:49 - uri=//home.js
+2019-10-10 11:29:49 - uri=//static/css/public.css
+2019-10-10 11:29:49 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:29:49 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:29:49 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:29:49 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:29:49 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:29:49 - uri=/
+2019-10-10 11:29:49 - Request method 'POST' not supported
+2019-10-10 11:29:49 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:29:49 - uri=/favicon.ico
+2019-10-10 11:30:30 - uri=//home.do
+2019-10-10 11:30:30 - index mapping 'home.do'
+2019-10-10 11:30:30 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:30:30 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:30:30 - uri=//home.js
+2019-10-10 11:30:30 - uri=//static/themes/icon.css
+2019-10-10 11:30:30 - uri=//static/jquery.min.js
+2019-10-10 11:30:30 - uri=//static/css/public.css
+2019-10-10 11:30:30 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:30:30 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:30:30 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:30:30 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:30:30 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:30:30 - uri=/
+2019-10-10 11:30:30 - Request method 'POST' not supported
+2019-10-10 11:30:30 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:30:30 - uri=/favicon.ico
+2019-10-10 11:30:56 - uri=//home.do
+2019-10-10 11:30:56 - index mapping 'home.do'
+2019-10-10 11:30:56 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:30:56 - uri=//static/jquery.min.js
+2019-10-10 11:30:56 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:30:56 - uri=//static/css/public.css
+2019-10-10 11:30:56 - uri=//static/themes/icon.css
+2019-10-10 11:30:56 - uri=//home.js
+2019-10-10 11:30:56 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:30:56 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:30:56 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:30:56 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:30:56 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:30:56 - uri=/
+2019-10-10 11:30:56 - Request method 'POST' not supported
+2019-10-10 11:30:56 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:30:56 - uri=/favicon.ico
+2019-10-10 11:31:00 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:31:00 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:31:13 - uri=//home.do
+2019-10-10 11:31:13 - index mapping 'home.do'
+2019-10-10 11:31:13 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:31:13 - uri=//static/jquery.min.js
+2019-10-10 11:31:13 - uri=//home.js
+2019-10-10 11:31:13 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:31:13 - uri=//static/themes/icon.css
+2019-10-10 11:31:13 - uri=//static/css/public.css
+2019-10-10 11:31:13 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:31:13 - uri=//static/themes/gray/images/panel_tools.png
+2019-10-10 11:31:13 - uri=//static/themes/gray/images/layout_arrows.png
+2019-10-10 11:31:13 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:31:13 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:31:13 - uri=/
+2019-10-10 11:31:13 - Request method 'POST' not supported
+2019-10-10 11:31:13 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:31:13 - uri=/favicon.ico
+2019-10-10 11:31:45 - uri=//home.do
+2019-10-10 11:31:45 - index mapping 'home.do'
+2019-10-10 11:31:45 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:31:45 - uri=//static/themes/icon.css
+2019-10-10 11:31:45 - uri=//static/jquery.min.js
+2019-10-10 11:31:45 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:31:45 - uri=//home.js
+2019-10-10 11:31:45 - uri=//static/css/public.css
+2019-10-10 11:31:45 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:31:45 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:31:45 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:31:45 - uri=/
+2019-10-10 11:31:45 - Request method 'POST' not supported
+2019-10-10 11:31:45 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:31:45 - uri=/favicon.ico
+2019-10-10 11:32:08 - uri=//home.do
+2019-10-10 11:32:08 - index mapping 'home.do'
+2019-10-10 11:32:08 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:32:08 - uri=//static/css/public.css
+2019-10-10 11:32:08 - uri=//static/themes/icon.css
+2019-10-10 11:32:08 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:32:08 - uri=//static/jquery.min.js
+2019-10-10 11:32:08 - uri=//home.js
+2019-10-10 11:32:08 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:32:08 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:32:08 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:32:08 - uri=/
+2019-10-10 11:32:08 - Request method 'POST' not supported
+2019-10-10 11:32:08 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:32:08 - uri=/favicon.ico
+2019-10-10 11:32:26 - uri=//home.do
+2019-10-10 11:32:26 - index mapping 'home.do'
+2019-10-10 11:32:26 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:32:26 - uri=//static/css/public.css
+2019-10-10 11:32:26 - uri=//static/jquery.min.js
+2019-10-10 11:32:26 - uri=//home.js
+2019-10-10 11:32:26 - uri=//static/themes/icon.css
+2019-10-10 11:32:26 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:32:26 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:32:26 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:32:26 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:32:26 - uri=/
+2019-10-10 11:32:26 - Request method 'POST' not supported
+2019-10-10 11:32:26 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:32:26 - uri=/favicon.ico
+2019-10-10 11:34:55 - uri=//home.do
+2019-10-10 11:34:55 - index mapping 'home.do'
+2019-10-10 11:34:55 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:34:55 - uri=//static/themes/icon.css
+2019-10-10 11:34:55 - uri=//static/css/public.css
+2019-10-10 11:34:55 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:34:55 - uri=//static/jquery.min.js
+2019-10-10 11:34:55 - uri=//home.js
+2019-10-10 11:34:55 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:34:55 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:34:55 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:34:55 - uri=/
+2019-10-10 11:34:55 - Request method 'POST' not supported
+2019-10-10 11:34:55 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
+2019-10-10 11:34:55 - uri=/favicon.ico
+2019-10-10 11:35:00 - uri=/logout
+2019-10-10 11:35:00 - logout
+2019-10-10 11:35:00 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:35:00 - uri=//static/jquery.min.js
+2019-10-10 11:35:00 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:35:00 - uri=//static/themes/icon.css
+2019-10-10 11:35:00 - uri=//static/demo.css
+2019-10-10 11:35:01 - uri=//login
+2019-10-10 11:35:01 - ==>  Preparing: select * from users where username=? 
+2019-10-10 11:35:01 - ==> Parameters: admin(String)
+2019-10-10 11:35:01 - <==      Total: 1
+2019-10-10 11:35:01 - uri=//home.do
+2019-10-10 11:35:01 - index mapping 'home.do'
+2019-10-10 11:35:01 - uri=//static/themes/gray/easyui.css
+2019-10-10 11:35:01 - uri=//static/themes/icon.css
+2019-10-10 11:35:01 - uri=//static/css/public.css
+2019-10-10 11:35:01 - uri=//static/jquery.min.js
+2019-10-10 11:35:01 - uri=//static/jquery.easyui.min.js
+2019-10-10 11:35:01 - uri=//home.js
+2019-10-10 11:35:01 - uri=//static/themes/icons/filesave.png
+2019-10-10 11:35:01 - uri=//static/themes/gray/images/blank.gif
+2019-10-10 11:35:01 - uri=//static/themes/gray/images/loading.gif
+2019-10-10 11:35:01 - uri=/
+2019-10-10 11:35:01 - Request method 'POST' not supported
+2019-10-10 11:35:01 - Resolved exception caused by Handler execution: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported
