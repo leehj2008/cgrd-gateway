@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.app.oracle.OracleDao" >  
+   
+     <select id="readRequest" resultType="java.util.Map">  
+        select * from RCGRD_REQ_RPTPACSIDX where GE_EXPMARK IS NULL AND rownum=1 
+    </select> 
+    <update id="markRequest" parameterType="java.lang.String">  
+        update RCGRD_REQ_RPTPACSIDX set GE_EXPMARK='READ' where PACSNO=#{PACSNO}
+    </update> 
+    
+    
+</mapper>  

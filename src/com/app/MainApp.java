@@ -14,17 +14,22 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Created by Administrator on 2016/5/6.
  */
 @ImportResource("beans.xml")
 @ComponentScan(value = {"com.app"})  
-@PropertySources(value={@PropertySource("ftp.properties"),@PropertySource("config.properties")})
+@PropertySources(value={@PropertySource("ftp.properties"),@PropertySource("config.properties"),
+		@PropertySource("storescu.properties"),
+		@PropertySource("storescp.properties"),
+		@PropertySource("movescu.properties")})
 @EnableAutoConfiguration 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,
 		HibernateJpaAutoConfiguration.class,MybatisAutoConfiguration.class})
 @ServletComponentScan(basePackages = {"com.app.login"})
+@EnableTransactionManagement
 public class MainApp extends SpringBootServletInitializer {
  
     @Override

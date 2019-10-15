@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.app.dao.ExamDao" >  
+    
+    
+    <select id="getStudies" parameterType="java.util.Map" resultType="java.util.Map">  
+        select * from study where StudyInstanceUID=#{objmap[20000D]}
+    </select>
+    <select id="getExamInfo" parameterType="java.util.Map" resultType="java.util.Map">  
+        select * from movetask where PACSNO=#{objmap[80050]}
+    </select>
+     <select id="getStudy"  resultType="java.util.Map">  
+        select * from study where ckey=#{ckey}
+    </select>
+    <update id="updateStudy" >
+    	update study set  TaskStatus=#{status},ExamID=#{examId},OrderID=#{orderId},PatientIntraID=#{patientIntraId} where ckey=#{ckey} 
+    </update>
+    <select id="getImages" parameterType="java.util.Map" resultType="java.util.Map">  
+         select * from instance where SOPInstanceUID=#{objmap[80018]}
+    </select>
+    
+    <insert id="insertStudy" parameterType="java.util.Map">  
+        insert into study(PatientID,PatientName,PatientDOB,PatientGender,
+			ProcedureStep,StudyDate,StudyTime,AccessionNumber,StudyInstanceUID,
+			TaskStatus,CreateDate,StudyStatus) values  (#{objmap[100020]},#{objmap[100010]},#{objmap[100030]},
+			#{objmap[100040]},#{objmap[81030]},#{objmap[80020]},#{objmap[80021]},#{objmap[80050]},
+			#{objmap[20000D]},'INIT',current_timestamp,'INIT')
+    </insert>
+    
+    <insert id="insertImage" parameterType="java.util.Map">  
+	    insert into instance (SeriesDesc,Modality,SeriesInstanceUID,StudyInstanceUID,
+			SOPInstanceUID,FilePath,HandleStatus)
+		values(#{objmap[8103E]},#{objmap[80060]},#{objmap[20000E]},#{objmap[20000D]},#{objmap[80018]},'','INIT')
+    </insert>
+    
+    
+    <!-- RIS Actions -->
+     <select id="getRISArriveOrder"  resultType="java.util.Map">  
+        select * from study where TaskStatus='INIT'
+    </select>
+    <update id="updateTaskStatus">
+    	update study set TaskStatus=#{status} where ckey=#{ckey}
+    </update>
+</mapper>  

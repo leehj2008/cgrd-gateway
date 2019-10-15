@@ -40,7 +40,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.app" level="debug"
+	<logger name="com.app" level="info"
 		additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="CONSOLE" />

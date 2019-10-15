@@ -5,4 +5,29 @@
      <select id="getOneTask" resultType="java.lang.String">  
         select current_date
     </select> 
+	<select id="getMoveTask" resultType="com.app.dao.Task">  
+        select ckey,PACSNO as accessionNumber,status,
+        study_instance_uid as StudyInstanceUID,
+        CHTNO as patientid,EXMTYPE as Modality,
+        HEADER_ID
+        from movetask  
+        where status=#{status} limit 1 for update
+    </select> 
+    <select id="getDeadTask" resultType="com.app.dao.Task">  
+        select ckey,PACSNO as AccessionNumber,status,study_instance_uid from movetask  
+        where status in ('MOVE_START','MOVE_PENDING') and timestampdiff(MINUTE,startMoveTime,current_timestamp)>12 order by ckey limit 100
+    </select>  
+    <update id="updateTask" >  
+        update movetask set status=#{status} where ckey=#{ckey} 
+    </update> 
+    <update id="updateTaskStartMove" >  
+        update movetask set status='MOVE_START',startMoveTime=current_timestamp where ckey=#{ckey} 
+    </update>
+    <update id="updateMoveTaskCkey" >  
+        update movetask set status=#{status},complete=#{complete},remain=#{remain},failed=#{failed} where ckey=#{ckey} 
+    </update>
+    <update id="updateMoveTask" >  
+        update movetask set status=#{status},complete=#{complete},remain=#{remain},failed=#{failed} where accession_number=#{accessionNumber} 
+    </update>
+    
 </mapper>  

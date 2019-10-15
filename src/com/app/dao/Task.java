@@ -4,6 +4,14 @@ public class Task {
 	private long ckey;
 	private int completed;
 	private int remain;
+	
+	private String HEADER_ID;
+	public String getHEADER_ID() {
+		return HEADER_ID;
+	}
+	public void setHEADER_ID(String hEADER_ID) {
+		HEADER_ID = hEADER_ID;
+	}
 	public int getCompleted() {
 		return completed;
 	}
@@ -32,6 +40,20 @@ public class Task {
 	}
 	private String seriesUID;
 	private String studyInstanceUID;
+	private String modality;
+	private String patientid;
+	public String getPatientid() {
+		return patientid;
+	}
+	public void setPatientid(String patientid) {
+		this.patientid = patientid;
+	}
+	public String getModality() {
+		return modality;
+	}
+	public void setModality(String modality) {
+		this.modality = modality;
+	}
 	public String getStudyInstanceUID() {
 		return studyInstanceUID;
 	}
@@ -40,6 +62,27 @@ public class Task {
 	}
 	private int id;
 	private String status;
+	private String qrcode;
+	private String report_id;
+	private String report_path;
+	public String getReport_path() {
+		return report_path;
+	}
+	public void setReport_path(String report_path) {
+		this.report_path = report_path;
+	}
+	public String getReport_id() {
+		return report_id;
+	}
+	public void setReport_id(String report_id) {
+		this.report_id = report_id;
+	}
+	public String getQrcode() {
+		return qrcode;
+	}
+	public void setQrcode(String qrcode) {
+		this.qrcode = qrcode;
+	}
 	public String getSeriesUID() {
 		return seriesUID;
 	}

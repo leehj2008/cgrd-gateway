@@ -24,8 +24,8 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.task.Task;
-import com.app.task.TaskDao;
+import com.app.dao.User;
+import com.app.dao.UserDao;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonMappingException;

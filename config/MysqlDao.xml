@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.app.dao.MysqlDao" >  
+   <insert id="syncData" parameterType="java.util.Map">
+   	insert into movetask (
+   		LOC,DTYM,IDCODE,CHTNO,SOURID,ODDPT,ODDRNO,ODDAT,ODTM,RCVDAT,RCVTM,EXDPT,
+   		EXMITNO,EXMITNM,PACSNO,EXDPTNM,EXMTYPE,HEADER_ID,
+   		HASHED_IDCODE,CHTNO_ENC,FRMID,APRVDAT,PROCEDURE_CODE,
+   		GE_EXPMARK,GE_EXPDAT,GE_EXPTM
+   	)   	
+   		values(   		
+   		#{data[LOC],jdbcType=VARCHAR},#{data[DTYM],jdbcType=VARCHAR},#{data[IDCODE],jdbcType=VARCHAR},
+   		#{data[CHTNO],jdbcType=VARCHAR},#{data[SOURID],jdbcType=VARCHAR},
+   		#{data[ODDPT],jdbcType=VARCHAR},#{data[ODDRNO],jdbcType=VARCHAR},
+   		#{data[ODDAT],jdbcType=VARCHAR},#{data[ODTM],jdbcType=VARCHAR},
+   		#{data[RCVDAT],jdbcType=VARCHAR},#{data[RCVTM],jdbcType=VARCHAR},
+   		#{data[EXDPT],jdbcType=VARCHAR},#{data[EXMITNO],jdbcType=VARCHAR},#{data[EXMITNM],jdbcType=VARCHAR},
+   		#{data[PACSNO],jdbcType=VARCHAR},#{data[EXDPTNM],jdbcType=VARCHAR},
+   		#{data[EXMTYPE],jdbcType=VARCHAR},#{data[HEADER_ID],jdbcType=VARCHAR},
+   		#{data[HASHED_IDCODE],jdbcType=VARCHAR},#{data[CHTNO_ENC],jdbcType=VARCHAR},
+   		#{data[FRMID],jdbcType=VARCHAR},#{data[APRVDAT],jdbcType=VARCHAR},
+   		#{data[PROCEDURE_CODE],jdbcType=VARCHAR},
+   		#{data[GE_EXPMARK],jdbcType=VARCHAR},#{data[GE_EXPDAT],jdbcType=VARCHAR},#{data[GE_EXPTM],jdbcType=VARCHAR}
+   	)
+   	
+   </insert>
+    
+</mapper>  
