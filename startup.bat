@@ -1,2 +1,2 @@
-java -cp .;config;bin;lib/*;rislib/* com.app.MainApp
+java -cp .;config;bin;lib/*; com.app.MainApp
 pause
