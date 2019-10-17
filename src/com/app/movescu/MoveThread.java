@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.util.ApplicationContextProvider;
+
 @Component
 public class MoveThread {
 
@@ -20,13 +22,11 @@ public class MoveThread {
 	private String moveSleep;
 	@Value("${moveThreadCount}")
 	private String moveThreadCount;
-	@Autowired
-	MoveTaskService moveTaskService;
 	public void execute() {
 		int tcnt=Integer.parseInt(moveThreadCount);
 		List<Worker> workers = new ArrayList<MoveThread.Worker>();
-		for(int i=1;i<tcnt;i++){
-			Worker w = new Worker("MoveThread-"+i);
+		for(int i=1;i<=tcnt;i++){
+			Worker w = new Worker(i+"");
 			workers.add(w);
 			w.start();
 			try {
@@ -35,20 +35,24 @@ public class MoveThread {
 				e.printStackTrace();
 			}
 		}
+		log.info("{} move threads started successfully.",workers.size());
 		
 	}
 
 	private class Worker extends Thread {
-		
+		MoveTaskService moveTaskService;
 		public Worker(String threadName){
 			super(threadName);
+			setName(threadName);
+			moveTaskService= ApplicationContextProvider.getBean("MoveTaskService", MoveTaskService.class);
 		}
 		
 		@Override
 		public void run() {
+			
 			while (true) {
 				try {
-					MoveThread.this.moveTaskService.processTask();
+					moveTaskService.processTask();
 				} catch (Exception e1) {
 					log.info("task process Exception.");
 					log.error(e1.getMessage());

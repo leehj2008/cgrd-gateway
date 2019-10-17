@@ -8,7 +8,7 @@
 		<file>${DEV_HOME}/app.log</file>
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 			<Pattern>
-				%d{yyyy-MM-dd HH:mm:ss} - %msg%n
+				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
 			</Pattern>
 			<charset>GBK</charset>
 		</encoder>
@@ -45,7 +45,7 @@
 		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="CONSOLE" />
 	</logger>
-	<logger name="org" level="info"
+	<logger name="org" level="warn"
 		additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 		<appender-ref ref="CONSOLE" />

@@ -51,7 +51,7 @@ public class ExamService {
 			}
 		}
 
-		log.info(map.toString());
+		log.debug(map.toString());
 		return map;
 	}
 }

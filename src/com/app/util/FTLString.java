@@ -8,13 +8,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.dcm4che2.data.DicomObject;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import freemarker.cache.StringTemplateLoader;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-@Component
+@Component("FTLString")
+@Scope("prototype")
 public class FTLString {
 	Configuration cfg ;
     StringTemplateLoader stringLoader ;
@@ -50,7 +52,7 @@ public class FTLString {
 			String tag_part2 = matcher.group(4);
 			int tagInteger = Integer.valueOf(tag_part1+tag_part2, 16);
 			String tagVal = dicomObject.getString(tagInteger);
-			System.out.println(matcher.group(1));
+			//System.out.println(matcher.group(1));
 			if(tagVal!=null&&!tagVal.equals("")){
 				pathexp = pathexp.replace(matcher.group(1), tagVal);
 			}

@@ -89,9 +89,14 @@ import org.dcm4che2.io.DicomInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.app.util.ApplicationContextProvider;
 import com.app.util.FTLString;
+import com.app.util.MD5Util;
+import com.app.dao.Task;
 import com.app.movescu.TaskRepo;
 import com.app.storescp.ExamService;
 
@@ -100,11 +105,14 @@ import com.app.storescp.ExamService;
  * @version $Revision: 15806 $ $Date: 2011-08-12 18:19:11 +0200 (Fr, 12 Aug 2011) $
  * @since Oct 13, 2005
  */
-@Component
+@Component("DCMRCV")
+@Scope("prototype")
 public class DcmRcv {
+	DcmModifier dcmModifier;
+	@Value("${storescp.hashpath}")
+	String hashpath;
 	@Autowired
 	ExamService examService;
-	@Autowired
 	FTLString ftlString = new FTLString();
     private static final int NO_SUCH_OBJECT_INSTANCE = 0x0112;
 
@@ -307,6 +315,8 @@ public class DcmRcv {
         ae.register(new VerificationService());
         ae.register(storageSCP);
         ae.register(stgcmtSCP);
+        dcmModifier=ApplicationContextProvider.getBean("dcmModifier", DcmModifier.class);
+        ftlString = ApplicationContextProvider.getBean("FTLString", FTLString.class);
     }
 
     public DcmRcv(String name) {
@@ -1182,7 +1192,7 @@ public class DcmRcv {
         File file = devnull != null ? devnull
                 : new File(tempFile, iuid + ".part");
         
-        LOG.info("M-WRITE {}", file);
+        LOG.debug("M-WRITE {}", file);
         try {
             DicomOutputStream dos = new DicomOutputStream(
                     new BufferedOutputStream(
@@ -1199,7 +1209,7 @@ public class DcmRcv {
         } catch (IOException e) {
             if (devnull == null && file != null) {
                 if (file.delete()) {
-                    LOG.info("M-DELETE {}", file);
+                    LOG.debug("M-DELETE {}", file);
                 }
             }
             throw new DicomServiceException(rq, Status.ProcessingFailure,
@@ -1207,8 +1217,34 @@ public class DcmRcv {
         }
         DicomInputStream dis = new DicomInputStream(file);
         DicomObject dicomObject = dis.readDicomObject();
+        
+        //get task from TaskRepository ,which is registered at thread  starting
+        String accno = dicomObject.get(Tag.AccessionNumber).getValueAsString(SpecificCharacterSet.valueOf(new String[]{"ISO_IR 100"}), 100);
+        LOG.info("============================="+as.getCalledAET()+accno);
+        LOG.info(TaskRepo.repo.toString());
+        Task task = TaskRepo.repo.get(as.getCalledAET()+accno);
+
+        LOG.info("============================="+task.getCkey()+" headerid="+task.getHEADER_ID());
+        String filePathStr = ftlString.processTag(filepath, dicomObject);
+        if(hashpath!=null&&hashpath.equalsIgnoreCase("true")){
+        	String[] pathitem = filePathStr.split("/");
+        	StringBuilder tempPath = new StringBuilder();
+        	for(int i=0;i<pathitem.length;i++){
+        		if(i==0){//headerid do not encrypt
+        			tempPath.append(pathitem[i]).append("/");
+        			continue;
+        		}
+        		pathitem[i]=MD5Util.getMD5(pathitem[i]);
+        		tempPath.append(pathitem[i]).append("/");
+        	}
+        	filePathStr = tempPath.toString().substring(0,tempPath.toString().length()-1);
+        }
+        //Anonymization
+        dicomObject = dcmModifier.modifyDicom(dicomObject,task);
+        
+        
         CloseUtils.safeClose(dis);
-        LOG.info("this="+this);
+        LOG.debug("DCMRCV Object: this="+this);
         examService.saveOrUpdateExam(dicomObject);
         
         DicomOutputStream dos = null;
@@ -1223,32 +1259,37 @@ public class DcmRcv {
             CloseUtils.safeClose(dos);
         }
         
-        String filePathStr = ftlString.processTag(filepath, dicomObject);
+        
         
         if(filepath.contains("@")){//need fetch data from DB and proccess with FTL
         	Map<String,Object> data = new HashMap<String,Object>();
-        	String accno = dicomObject.get(Tag.AccessionNumber).getValueAsString(SpecificCharacterSet.valueOf(new String[]{"ISO_IR 100"}), 100);
-        	data.put("task", TaskRepo.repo.get(accno));
+        	
+        	data.put("task", task);
         	filePathStr = filePathStr.replaceAll("[@]", "\\$");
         	filePathStr = ftlString.compileString(filePathStr, data);
+        	LOG.info("============================="+filePathStr+" data="+task.getHEADER_ID());
         }
         String newTempFileStr = tempFile.getAbsolutePath()+"/"+filePathStr;
         File newTempFile = new File(newTempFileStr);
         if(newTempFile.mkdirs()){
-        	LOG.info("new dir make success:{}",newTempFile.getAbsolutePath());
+        	LOG.debug("new dir make success:{}",newTempFile.getAbsolutePath());
         }
         // Rename the file after it has been written. See DCM-279
         if (devnull == null && file != null) {
-            File rename = new File(newTempFile, iuid);
+        	String fileName = iuid;
+        	if(hashpath!=null&&hashpath.equalsIgnoreCase("true")){
+        		fileName = MD5Util.getMD5(iuid);
+        	}
+            File rename = new File(newTempFile, fileName);
             if (rename.exists()){
             	rename.delete();
             }
-            LOG.info("M-RENAME {} to {}", file, rename);
+            LOG.debug("M-RENAME {} to {}", file, rename);
             //boolean isSuc = file.renameTo(rename);
             FileUtils.copyFile(file, rename);
             
             boolean isDelSuc = file.delete();
-            LOG.info("TEMP FILE -DELETE {},{} ", file,isDelSuc);
+            LOG.debug("TEMP FILE -DELETE {},{} ", file,isDelSuc);
             
             if (cache.getJournalRootDir() != null) {
                 cache.record(rename);

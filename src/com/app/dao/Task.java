@@ -4,7 +4,21 @@ public class Task {
 	private long ckey;
 	private int completed;
 	private int remain;
+	private String LOC;
+	private String HASHED_IDCODE;
 	
+	public String getLOC() {
+		return LOC;
+	}
+	public String getHASHED_IDCODE() {
+		return HASHED_IDCODE;
+	}
+	public void setHASHED_IDCODE(String hASHED_IDCODE) {
+		HASHED_IDCODE = hASHED_IDCODE;
+	}
+	public void setLOC(String lOC) {
+		LOC = lOC;
+	}
 	private String HEADER_ID;
 	public String getHEADER_ID() {
 		return HEADER_ID;

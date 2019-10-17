@@ -9,7 +9,7 @@
         select ckey,PACSNO as accessionNumber,status,
         study_instance_uid as StudyInstanceUID,
         CHTNO as patientid,EXMTYPE as Modality,
-        HEADER_ID
+        HEADER_ID,LOC,HASHED_IDCODE
         from movetask  
         where status=#{status} limit 1 for update
     </select> 

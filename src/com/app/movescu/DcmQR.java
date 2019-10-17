@@ -91,6 +91,7 @@ import org.dcm4che2.net.service.StorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.app.dao.TaskDao;
@@ -102,7 +103,8 @@ import com.app.dao.TaskStatus;
  * @version $Revision: 14908 $ $Date: 2011-02-16 14:57:03 +0100 (Mi, 16 Feb 2011) $
  * @since Jan, 2006
  */
-@Component
+@Component("DCMQR")
+@Scope("prototype")
 public class DcmQR {
 	@Autowired
 	TaskDao taskdao;
@@ -1810,6 +1812,7 @@ public class DcmQR {
         int warning = cmd.getInt(Tag.NumberOfWarningSuboperations, 0);
         int total = (completed+remain);
         total = total==0?-1:total;
+        Object obj = this;
         LOG.info(">>>>>>>>>>>>> complete:"+completed
         		+" remain:"+remain
         		+" failed:"+failed
