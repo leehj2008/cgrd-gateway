@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 dcm
+bin
 log
 # Log file
 *.log
