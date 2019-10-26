@@ -26,7 +26,7 @@ public class StoreSCPService2 {
 	public void startScp() {
 		int localPortInt=Integer.parseInt(localPort);
 		int moveThreadCountInt=Integer.parseInt(moveThreadCount);
-		for(int port=localPortInt;port<=localPortInt+moveThreadCountInt;port++){
+		for(int port=localPortInt;port<localPortInt+moveThreadCountInt;port++){
 			DcmRcv dcmrcv= ApplicationContextProvider.getBean("DCMRCV", DcmRcv.class);
 			log.info("Starting StoreSCP"+dcmrcv);
 			String args [] = {localAE+port+":"+port,"-dest",storeDir,"-filepath",storeFile};
